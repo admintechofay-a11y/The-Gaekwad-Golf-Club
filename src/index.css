@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #D4AF37;
+    --gold-dark: #8C6D23;
+    --gold-champagne: #F3E5AB;
+    --royal-green: #0A2916;
+    --royal-emerald: #10B981;
+    --royal-bg: #FAF8F5;
+    --royal-surface: #FFFFFF;
+    --royal-text: #14241A;
+    --royal-muted: #56685C;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF8F5;
+    color: #14241A;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    background: #FAF8F5;
+    color: #14241A;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 100% 40%, rgba(10, 41, 22, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 0% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  }
+}
+
+/* Light Luxury Panels & Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  box-shadow: 0 10px 30px rgba(10, 41, 22, 0.05);
+}
+
+.glass-panel-dark {
+  background: #FFFFFF;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 16px 40px -10px rgba(10, 41, 22, 0.08), 0 2px 6px rgba(10, 41, 22, 0.02);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, #FFFFFF 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.12);
+}
+
+/* Royal Headings & Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B89025 0%, #8C6D1A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-text {
+  background: linear-gradient(135deg, #A8811A 0%, #D4AF37 50%, #8C6810 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.royal-heading-gradient {
+  background: linear-gradient(135deg, #092313 0%, #153E23 60%, #A8811A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Royal Ornate Dividers */
+.royal-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.royal-divider::before,
+.royal-divider::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  max-width: 120px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+/* Royal Corner Accents */
+.royal-corner-box {
+  position: relative;
+}
+.royal-corner-box::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #D4AF37;
+  border-left: 2px solid #D4AF37;
+  pointer-events: none;
+}
+.royal-corner-box::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #D4AF37;
+  border-right: 2px solid #D4AF37;
+  pointer-events: none;
+}
+
+/* Buttons */
+.gold-shimmer-btn {
+  position: relative;
+  background: linear-gradient(135deg, #DFBA50 0%, #D4AF37 50%, #B89326 100%);
+  color: #07170E;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.gold-shimmer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.gold-shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.85s ease;
+}
+
+.gold-shimmer-btn:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+.royal-outline-btn {
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: #FFFFFF;
+  color: #0A2916;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(10, 41, 22, 0.04);
+}
+.royal-outline-btn:hover {
+  border-color: #D4AF37;
+  background: #FAF8F5;
+  color: #8C6D23;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.2);
+}
+
+/* Hide scrollbars cleanly */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A038;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C6D23;
+}
