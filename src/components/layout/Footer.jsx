@@ -149,8 +149,8 @@ export function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="mt-8 flex flex-col sm:flex-row justify-between items-center flex-wrap gap-4 text-xs text-[#A8BEB0]">
-          <p className="font-body">
+        <div className="mt-8 flex flex-col lg:flex-row justify-between items-center flex-wrap gap-4 text-xs text-[#A8BEB0]">
+          <p className="font-body text-center lg:text-left">
             &copy; {new Date().getFullYear()} Gaekwad Golf Club. Lukshmi Vilas Palace Estate. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
@@ -160,6 +160,17 @@ export function Footer() {
             <span>&bull;</span>
             <Link to="/about" className="hover:text-gold-400 transition-colors">Course Etiquette</Link>
           </div>
+          <p className="font-body text-center lg:text-right">
+            Designed and Developed by{' '}
+            <a
+              href="https://techofay-global-ventures.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold-400 hover:text-gold-300 font-medium underline underline-offset-4 decoration-gold-500/40 hover:decoration-gold-300 transition-colors"
+            >
+              Techofay Global Ventures
+            </a>
+          </p>
         </div>
       </div>
     </footer>
